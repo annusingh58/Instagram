@@ -1,9 +1,19 @@
-*{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instgram Sign up</title>
+    <script src="https://kit.fontawesome.com/5553f878fa.js" crossorigin="anonymous"></script>
+    
+    <style>
+        *{
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
 
-}
+   }
     #screen{
         height: 650px;
         width:53%;
@@ -148,3 +158,66 @@
     }
 
 
+
+
+    </style>
+    
+
+</head>
+<body>
+    <div id="screen">
+       <div class="body">
+        <div class ="left">
+            <div class="left1">
+                <div class="img1">
+                    <img src="./screenshot3.png"/>
+
+                </div>
+                <div class="img2">
+                    <img src="./screenshot4.png"/>
+
+                </div>
+            </div>
+                
+            
+        </div>
+        <div class ="right">
+           <div id="logo">
+            <div id="name">
+                <img src="./images.png"/>
+            </div>
+            
+            <div>
+                <form onsubmit="login(event)">
+                   <div id="form"> 
+                    <div><input id="iemail" type="email" placeholder="Enter Email Id"/></br></div>
+                   <div><input id="ipassword" type="password" placeholder="password"/></br></div>
+                   <div><input type="submit" value="Login"/></div>
+                </div>
+                </form>
+               
+            </div>
+            <div id="fb">
+                <p><span><i class="fa-brands fa-facebook"></i></span>Login With Facebook</p>
+                <p>Forget Password?</p>
+                <p></p>
+            
+        </div>
+
+           </div>
+           <p>Don't have an account? <span>Sign up</span></p>
+           <div id="app">
+            <p>Get the App</p>
+            <div>
+                <img src="./googleplay.webp"/>
+                <img src="./EHY6QnZYdNX.png"/>
+
+            </div>
+           </div>
+
+       </div>
+
+    </div>
+    
+</body>
+</html>
