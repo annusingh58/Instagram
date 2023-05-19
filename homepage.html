@@ -161,7 +161,7 @@
         height: 500px;
         width:100%;
         border:1px solid gainsboro;
-        background-color: black;
+        /* background-color: black; */
         
 
      }
@@ -277,8 +277,8 @@
                         </div>
                         <div id="main">
                         <div id="mainpost">
-                            <img src=" "/>
-                            <p></p>
+                            <!-- <img src=" "/>
+                            <p></p> -->
                         </div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@
                 </div>
                
             </div>
-            <div id="right"></div> 
+            <!-- <div id="right"></div>  -->
         </div>
 
     </div>
@@ -295,11 +295,12 @@
 <script>
     window.onload=function(){
         // alert("work on");
-        var divtoshowproduct=document.getElementById("mainpost");
+        var divtoshowproduct=document.getElementById("main");
         var finalData="";
         var productFromLS=JSON.parse(localStorage.getItem("post"));
         for(i=0;i<productFromLS.length;i++){
             finalData+=`<div onclick='redirect(${JSON.stringify(productFromLS[i])})' id="singlePro" >
+                
                 <img src=${productFromLS[i].proimage}/>
                 <p>${productFromLS[i].proname}</p>               
                  </div>`;
