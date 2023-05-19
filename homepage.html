@@ -15,21 +15,21 @@
     #screen{
         height: 1000px;
         width: 100%;
-        border:4px solid red;
+        /* border:4px solid red;     */
     }
     #body{
         height: 800px;
         width:100%;
         padding: 5px;
-        border:1px solid green;
+        /* border:1px solid green; */
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         /* margin-top: 65px; */
     }
     #left{
         height: 550px;
         width: 18%;
-        border:4px solid blue;
+        /* border:4px solid blue; */
         padding: 15px;
         /* position: fixed; */
     }
@@ -79,27 +79,115 @@
         margin-left: 25px;
 
     }
+    #more:hover{
+        background-color: rgb(213, 213, 218);
+
+    }
     #middle{
         height:750px;
         width:45%;
-        border:5px solid brown;
-        /* background-color: rgb(189, 185, 185); */
-
-    }
-    #storypart{
-        height:100%;
-        width: 82%;
-        border:1px solid purple;
-        margin-left: 18%;
+        /* border:1px solid brown; */
+        background-color:rgb(254,250,250);
 
     }
     #story{
-        height: 1000;
+        height:90px;
+        width: 82%;
+        border:1px solid gainsboro;
+        margin-top: 30px;
+        margin-left: 18%;
+         display: flex;
+
+
     }
-    #right{
+    #story>div{
+        height: 70px;
+        width: 70px;
+        border:2px solid rgb(255,191,0);
+        border-radius: 50%;
+        margin-left: 15px;
+        text-align: center;
+
+    }
+     #story>div>img{
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+     }
+     #story>div>img>p{
+            font-size: 8px;
+     }
+     #post{
+        height: 700px;
+        width: 82%;
+        border:1px solid gainsboro;
+        margin-top: 15px;
+        margin-left: 105px;
+     }
+     #postinfo{
+        height: 30px;
+        width:100%;
+     }
+     #postinfo>div{
+        display: flex;
+        height: 50px;
+        width: 100%;
+        border:1px solid gainsboro;
+        align-items: center;
+
+     }
+     #postinfo>div>div{
+        height: 40px;
+        width: 40px;
+        border:1px solid  rgb(255,191,0);
+        border-radius: 50px;
+        margin-left: 10px;
+
+
+     }
+     #postinfo>div>div>img{
+        height: 100%;
+        width: 100%;
+        border-radius: 50px;
+
+     }
+
+     #postinfo>div>p{
+        margin-left: 5px;
+
+     }
+     #main{
+        margin-top: 45px;
+        height: 500px;
+        width:100%;
+        border:1px solid gainsboro;
+        background-color: black;
+        
+
+     }
+     #mainpost{
+        /* margin-top: 45px; */
+        height: 500px;
+        width:82%;
+        border:1px solid gainsboro;
+        margin-left: 45px;
+        background-color: white;
+    
+     }
+     #mainpost>img{
+        height: 100%;
+        width: 100%;
+     }
+
+
+
+     
+
+  #right{
         height: 550px;
-        width:30%;
+        width:40%;
         border:1px solid blue;
+        background-color: rgb(255,250,250);
     }
 
 
@@ -158,16 +246,44 @@
 
             </div>
             <div id="middle">
-                <div id="storypart">
-                    <div id="story">
-                        <div id="simg">
-                            <img src=""/>
+                <div id="story">
+                
+                        <div >
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/640px-Starbucks_Corporation_Logo_2011.svg.png"/>
+                            <p>Starbucks</p>
+
                         </div>
-                        <p></p>
+                        <div>
+                            <img src="https://firstindia.co.in/public/news/September2022/1664088029Photo%20by%20%20-%202022-09-25T121005.380.png"/>
+                            <p>story</p>
+                        </div>
+                        <div>
+                            <img src="https://static.dezeen.com/uploads/2019/04/ikea-logo-new-sq-1.jpg"/>
+                            <p>Ikea</p>
+                        </div>
     
-                    </div>
+                    
                 </div>
 
+                <div id="post">
+                    <div>
+                        <div id="postinfo">
+                            <div>
+                                <div>          
+                                     <img src="https://www.ikea.com/images/ikea-logo-3313e386d5420bc0e8e92cbac2dc7a43.jpg?f=s"/>
+                                </div>
+                                    <p>ikea.india</p>
+                            </div>
+                        </div>
+                        <div id="main">
+                        <div id="mainpost">
+                            <img src=" "/>
+                            <p></p>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
                
             </div>
             <div id="right"></div> 
@@ -176,4 +292,30 @@
     </div>
     
 </body>
+<script>
+    window.onload=function(){
+        // alert("work on");
+        var divtoshowproduct=document.getElementById("mainpost");
+        var finalData="";
+        var productFromLS=JSON.parse(localStorage.getItem("post"));
+        for(i=0;i<productFromLS.length;i++){
+            finalData+=`<div onclick='redirect(${JSON.stringify(productFromLS[i])})' id="singlePro" >
+                <img src=${productFromLS[i].proimage}/>
+                <p>${productFromLS[i].proname}</p>               
+                 </div>`;
+
+        }
+        console.log(finalData,"finalData here");
+        divtoshowproduct.innerHTML=finalData;
+    }
+    function redirect(post) {
+            var singleProduct = JSON.stringify(post);
+            console.log(singleProduct, " s here")
+            // alert("Working")
+            localStorage.setItem("post", singleProduct);
+            window.location.href = './SingleProduct.html'
+        }
+
+
+</script>
 </html>

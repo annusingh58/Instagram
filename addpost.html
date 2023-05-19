@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addpost</title>
+</head>
+<body>
+    <form onsubmit="postlist(event)">
+        <label>Post Name</label><br/>
+        <input id="pname" type="text" /></br>
+        <label>Post Image url</label><br/>
+        <input id="pimage" type="text" /></br>
+        <input type="submit"/> </br>
+    </form>
+    <script>
+        function postlist(event){
+            event.preventDefault();
+            alert(" Adding post");
+
+
+            var proname=document.getElementById("pname").value;
+            var proimage=document.getElementById("pimage").value;
+
+
+            var post={proname,proimage};
+
+            var LS=JSON.parse(localStorage.getItem("post")) ||[];
+            LS.push(post);
+            localStorage.setItem("post",JSON.stringify(LS));
+
+            alert("post Added Sucessfully");
+
+
+
+        }
+    </script>
+    
+</body>
+</html>
