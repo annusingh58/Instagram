@@ -314,7 +314,7 @@
                         <button>Login</button>
                     </div>
                     <div id="logout">
-                        <button>LOgout</button>
+                        <button>Logout</button>
                     </div>
                 </div>
             </div> 
@@ -323,20 +323,7 @@
     </div>
     
 </body>
-<script>
-    window.onload=function(){
-        // alert("working");
-        var user=JSON.parse(localStorage.getItem("flipkart_currentuser"));
-        var div=document.getElementById("switch");
-        var divforlogout=document.getElementById("Logout");
-        var name=`<h5>${user.uname}</h5>`;
-        var button=`<button onclick="Logout()">Logout</button>`;
-        div.innerHTML=name;
-        divforlogout.innerHTML=button;
-}
 
-
-</script>
 <script>
     window.onload=function(){
         // alert("work on");
@@ -347,11 +334,6 @@
         var button=`<button onclick="Logout()">Logout</button>`;
         div.innerHTML=name;
         divforlogout.innerHTML=button;
-
-
-
-
-
 
         var divtoshowproduct=document.getElementById("main");
         var finalData="";
@@ -368,11 +350,11 @@
         divtoshowproduct.innerHTML=finalData;
     }
     function redirect(post) {
-            var singleProduct = JSON.stringify(post);
-            console.log(singleProduct, " s here")
+            var singlePost = JSON.stringify(post);
+            console.log(singlePost, " s here")
             // alert("Working")
-            localStorage.setItem("post", singleProduct);
-            window.location.href = './SingleProduct.html'
+            localStorage.setItem("post", singlePost);
+            window.location.href = './profile.html'
         }
         function Logout(){
         alert("Logout Successfully");
