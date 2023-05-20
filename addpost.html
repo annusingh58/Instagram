@@ -26,7 +26,7 @@
 
             var post={proname,proimage};
 
-            var LS=JSON.parse(localStorage.getItem("post")) ||[];
+            var LS=JSON.parse(localStorage.getItem("post")) || [];
             LS.push(post);
             localStorage.setItem("post",JSON.stringify(LS));
 

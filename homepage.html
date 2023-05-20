@@ -160,7 +160,7 @@
      }
      #main{
         margin-top: 45px;
-        height: 500px;
+        /* height: 500px; */
         width:100%;
         border:1px solid gainsboro;
         /* background-color: black; */
@@ -174,11 +174,13 @@
         border:1px solid gainsboro;
         margin-left: 45px;
         background-color: white;
+        margin-top: 25px;
+
     
      }
      #mainpost>img{
-        height: 50%;
-        width: 50%;
+        height: 100%;
+        width: 100%;
      }
 
 
@@ -299,8 +301,8 @@
                         </div>
                         <div id="main">
                         <div id="mainpost">
-                            <!-- <img src=" "/>
-                            <p></p> -->
+                            <img src=" "/>
+                            <p></p>
                         </div>
                         </div>
                     </div>
@@ -313,7 +315,7 @@
                     <div id="Switch">
                         <button>Login</button>
                     </div>
-                    <div id="logout">
+                    <div id="Logout">
                         <button>Logout</button>
                     </div>
                 </div>
@@ -327,8 +329,9 @@
 <script>
     window.onload=function(){
         // alert("work on");
-        var user=JSON.parse(localStorage.getItem("Inst_currentuser"));
-        var div=document.getElementById("switch");
+        var user=JSON.parse(localStorage.getItem("CurrentUser"));
+        // console.log(user,"user here");
+        var div=document.getElementById("Switch");
         var divforlogout=document.getElementById("Logout");
         var name=`<h5>${user.uname}</h5>`;
         var button=`<button onclick="Logout()">Logout</button>`;
@@ -339,12 +342,10 @@
         var finalData="";
         var productFromLS=JSON.parse(localStorage.getItem("post"));
         for(i=0;i<productFromLS.length;i++){
-            finalData+=`<div onclick='redirect(${JSON.stringify(productFromLS[i])})' id="singlePro" >
-                
-                <img src=${productFromLS[i].proimage}/>
-                <p>${productFromLS[i].proname}</p>               
-                 </div>`;
-
+            finalData+=` <div id="mainpost">
+                            <img src="${productFromLS[i].proimage} "/>
+                            <p>${productFromLS[i].proname}</p>
+                        </div>`;
         }
         console.log(finalData,"finalData here");
         divtoshowproduct.innerHTML=finalData;
