@@ -85,10 +85,11 @@
     }
     #middle{
         height:750px;
-        width:45%;
+        width:55%;
         /* border:1px solid brown; */
         background-color:rgb(254,250,250);
-        padding-left: 135px;
+        padding-left: 15%;
+        align-items: center;
 
     }
     #story{
@@ -96,7 +97,7 @@
         width: 82%;
         border:1px solid gainsboro;
         margin-top: 30px;
-        margin-left: 23%;
+        margin-left: 20%;
          display: flex;
 
 
@@ -186,9 +187,29 @@
 
   #right{
         height: 550px;
-        width:40%;
+        width:30%;
         border:1px solid blue;
+        margin-left: 6%;
+        margin-top: 35px;
         background-color: rgb(255,250,250);
+    }
+    #nb{
+        height: 50px;
+        width:80%;
+        border:1px solid black;
+        margin-top: 30px;
+        margin-left: 18%;
+        display: flex;
+        /* justify-content:space-between; */
+    }
+    #nb>div{
+        height: 100%;
+        width: 100%;
+    }
+    #nb >div>button{
+        height: 90%;
+        width: 50%;
+        size: 18px;
     }
 
 
@@ -232,7 +253,7 @@
                         <i class="fa-regular fa-square-plus"></i>
                         <p>Create</p>
                     </div>
-                    <div>
+                    <div style="cursor: pointer;"; onclick="window.location.href=`./profile.html`">
                         <i class="fa-regular fa-user"></i>
                         <p>Profile</p>
                     </div>
@@ -287,7 +308,16 @@
                 </div>
                
             </div>
-            <!-- <div id="right"></div>  -->
+            <div id="right">
+                <div id="nb">
+                    <div id="Switch">
+                        <button>Login</button>
+                    </div>
+                    <div id="logout">
+                        <button>LOgout</button>
+                    </div>
+                </div>
+            </div> 
         </div>
 
     </div>
@@ -295,7 +325,34 @@
 </body>
 <script>
     window.onload=function(){
+        // alert("working");
+        var user=JSON.parse(localStorage.getItem("flipkart_currentuser"));
+        var div=document.getElementById("switch");
+        var divforlogout=document.getElementById("Logout");
+        var name=`<h5>${user.uname}</h5>`;
+        var button=`<button onclick="Logout()">Logout</button>`;
+        div.innerHTML=name;
+        divforlogout.innerHTML=button;
+}
+
+
+</script>
+<script>
+    window.onload=function(){
         // alert("work on");
+        var user=JSON.parse(localStorage.getItem("Inst_currentuser"));
+        var div=document.getElementById("switch");
+        var divforlogout=document.getElementById("Logout");
+        var name=`<h5>${user.uname}</h5>`;
+        var button=`<button onclick="Logout()">Logout</button>`;
+        div.innerHTML=name;
+        divforlogout.innerHTML=button;
+
+
+
+
+
+
         var divtoshowproduct=document.getElementById("main");
         var finalData="";
         var productFromLS=JSON.parse(localStorage.getItem("post"));
@@ -317,6 +374,11 @@
             localStorage.setItem("post", singleProduct);
             window.location.href = './SingleProduct.html'
         }
+        function Logout(){
+        alert("Logout Successfully");
+        localStorage.removeItem("insta_currentuser");
+       window.location.reload();
+}
 
 
 </script>
