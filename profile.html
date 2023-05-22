@@ -291,17 +291,17 @@
     window.onload=function(){
        var profilename=document.getElementById("switch");
        var cprofile=document.getElementById("profile");
-       var pdata=JSON.parse(localStorage.getItem("CurrentUser"));
-       var logindata=JSON.parse(localStorage.getItem("CurrentUser"));
+       var CurrentUser=JSON.parse(localStorage.getItem("InstaCurrentUser"));
+       var Userdata=JSON.parse(localStorage.getItem("InstaCurrentUser"));
 
 
        var pdata=JSON.parse(localStorage.getItem("editprofile"));
        var editprofile=` <div id="profileimg">
-                   <img src="${pdata.image}"  />
+                   <img src=" "  />
                </div>
                <div id="info">
                    <div id="name">
-                       <h4>${pdata.name}</h4>
+                       <h4>${pdata.Userdetails}</h4>
                        <button>Edit Profile</button>
                    </div>
                    <div>

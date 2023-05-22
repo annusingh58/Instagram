@@ -211,8 +211,14 @@
     #nb >div>button{
         height: 90%;
         width: 50%;
-        size: 18px;
+         /* font-size: 18px; */
+         /* border: 1px solid red; */
     }
+    /* #switch{
+        height: 40px;
+        font-size: 22px;
+        border:1px solid red;
+    } */
 
 
 
@@ -329,11 +335,11 @@
 <script>
     window.onload=function(){
         // alert("work on");
-        var user=JSON.parse(localStorage.getItem("CurrentUser"));
-        // console.log(user,"user here");
+        var CurrentUser=JSON.parse(localStorage.getItem("InstaCurrentUser"));
+        // console.log(CurrentUser,"CurrentUser here");
         var div=document.getElementById("Switch");
         var divforlogout=document.getElementById("Logout");
-        var name=`<h5>${user.uname}</h5>`;
+        var name=`<h5>${CurrentUser.uname}</h5>`;
         var button=`<button onclick="Logout()">Logout</button>`;
         div.innerHTML=name;
         divforlogout.innerHTML=button;
@@ -359,7 +365,7 @@
     //     }
         function Logout(){
         alert("Logout Successfully");
-        localStorage.removeItem("insta_currentuser");
+        localStorage.removeItem("InstaCurrentUser");
         window.location.href = './singup.html'
     //    window.location.reload();
 }

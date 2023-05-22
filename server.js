@@ -13,19 +13,19 @@ function signup(event){
          if(password==confimpassword){
  
             
-                 var ins= JSON.parse(localStorage.getItem("UserData")) || []   
+                 var ls= JSON.parse(localStorage.getItem("InstaUsers")) || []   
                  var flag=false;
-                 for(i=0;i<ins.length;i++){
-                     if(ins[i].uemail==email){
+                 for(i=0;i<ls.length;i++){
+                     if(ls[i].uemail==email){
                          flag=true;
                      }
  
                  }
                  if(flag==false){
-                 var data ={uname :name,uemail:email,upassword:password,uconfimpassword:confimpassword}
-                 ins.push(data);
-                 console.log(ins);
-                 localStorage.setItem("UserData",JSON.stringify(ins))
+                 var userdata ={uname :name,uemail:email,upassword:password,uconfimpassword:confimpassword}
+                 ls.push(userdata);
+                 console.log(ls);
+                 localStorage.setItem("InstaUsers",JSON.stringify(ls))
                  window.location.href="./login.html"
  
                  }
@@ -64,20 +64,20 @@ function signup(event){
      var lemail=document.getElementById("lemail").value;
      var lpassword=document.getElementById("lpassword").value;
  
-     var loginuser={};
+     var CurrentUser={};
      if(lemail && lpassword){
-         var ins=JSON.parse(localStorage.getItem("UserData"))
+         var ls=JSON.parse(localStorage.getItem("InstaUsers"))
          var flag =false;
-         for(var i=0;i<ins.length;i++){
-             if(ins[i].uemail==lemail){
+         for(var i=0;i<ls.length;i++){
+             if(ls[i].uemail==lemail){
                  flag=true;
-                 loginuser=ins[i];
+                 CurrentUser=ls[i];
              }
  
             
          }
               if( flag==true){
-                 localStorage.setItem("CurrentUser",JSON.stringify(loginuser))
+                 localStorage.setItem("InstaCurrentUser",JSON.stringify(CurrentUser))
                  alert("login successfull")
                  window.location.href="./homepage.html"
                  

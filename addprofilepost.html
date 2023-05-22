@@ -10,24 +10,24 @@
 </head>
 <body>
     <form onsubmit="addprofilepost(event)">
-        <input id="image" type="text" placeholder="Enter image.." /></br></br>
-        <input id="details" type="text" placeholder="Enter details.." /></br></br>
+        <input id="Userimage" type="text" placeholder="Enter image.." /></br></br>
+        <input id="Userdetails" type="text" placeholder="Enter details.." /></br></br>
         <input type="submit" value="add post" />
     </form>
     <script>
         function addprofilepost(event){
             event.preventDefault();
-            var image=document.getElementById("image").value;
-            var detail=document.getElementById("details").value;
+            var image=document.getElementById("Userimage").value;
+            var detail=document.getElementById("Userdetails").value;
         
-            var postdata={image,details};
+            var postdata={Userimage,Userdetails};
 
-            var ls= JSON.parse(localStorage.getItem("postdata")) || [];
+            var ls= JSON.parse(localStorage.getItem("InstaProfile")) || [];
             ls.push(postdata);
 
-            localStorage.setItem("postdata", JSON.stringify(ls));
+            localStorage.setItem("InstaProfile", JSON.stringify(ls));
 
-            alert("post added successfully");
+            alert(" profile post added successfully");
             
         }
     </script>
