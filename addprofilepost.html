@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>profilepost</title>
+
+</head>
+<body>
+    <form onsubmit="addprofilepost(event)">
+        <input id="image" type="text" placeholder="Enter image.." /></br></br>
+        <input id="details" type="text" placeholder="Enter details.." /></br></br>
+        <input type="submit" value="add post" />
+    </form>
+    <script>
+        function addprofilepost(event){
+            event.preventDefault();
+            var image=document.getElementById("image").value;
+            var detail=document.getElementById("details").value;
+        
+            var postdata={image,details};
+
+            var ls= JSON.parse(localStorage.getItem("postdata")) || [];
+            ls.push(postdata);
+
+            localStorage.setItem("postdata", JSON.stringify(ls));
+
+            alert("post added successfully");
+            
+        }
+    </script>
+</body>

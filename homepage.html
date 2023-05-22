@@ -190,7 +190,7 @@
   #right{
         height: 550px;
         width:30%;
-        border:1px solid blue;
+        /* border:1px solid blue; */
         margin-left: 6%;
         margin-top: 35px;
         background-color: rgb(255,250,250);
@@ -198,7 +198,7 @@
     #nb{
         height: 50px;
         width:80%;
-        border:1px solid black;
+        /* border:1px solid black; */
         margin-top: 30px;
         margin-left: 18%;
         display: flex;
@@ -316,7 +316,7 @@
                         <button>Login</button>
                     </div>
                     <div id="Logout">
-                        <button>Logout</button>
+                        <button style="cursor: pointer;"onclick= "window.location.href='./singup.html'">Logout</button>
                     </div>
                 </div>
             </div> 
@@ -350,17 +350,18 @@
         console.log(finalData,"finalData here");
         divtoshowproduct.innerHTML=finalData;
     }
-    function redirect(post) {
-            var singlePost = JSON.stringify(post);
-            console.log(singlePost, " s here")
-            // alert("Working")
-            localStorage.setItem("post", singlePost);
-            window.location.href = './profile.html'
-        }
+    // function redirect(post) {
+    //         var singlePost = JSON.stringify(post);
+    //         console.log(singlePost, " s here")
+    //         // alert("Working")
+    //         localStorage.setItem("post", singlePost);
+    //         window.location.href = './profile.html'
+    //     }
         function Logout(){
         alert("Logout Successfully");
         localStorage.removeItem("insta_currentuser");
-       window.location.reload();
+        window.location.href = './singup.html'
+    //    window.location.reload();
 }
 
 
