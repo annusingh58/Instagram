@@ -307,7 +307,7 @@
                         </div>
                         <div id="main">
                         <div id="mainpost">
-                            <img src=" "/>
+                            <img/>
                             <p></p>
                         </div>
                         </div>
@@ -349,7 +349,7 @@
         var productFromLS=JSON.parse(localStorage.getItem("post"));
         for(i=0;i<productFromLS.length;i++){
             finalData+=` <div id="mainpost">
-                            <img src="${productFromLS[i].proimage} "/>
+                            <img src= "${productFromLS[i].proimage} "/>
                             <p>${productFromLS[i].proname}</p>
                         </div>`;
         }
