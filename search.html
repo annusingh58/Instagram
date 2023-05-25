@@ -72,11 +72,10 @@
     
 </body>
 <script>
-function search_user(){
+function searchuser(){
 
     var LS = JSON.parse(localStorage.getItem("instaUsers"))
-    let input = document.getElementById('form').value
-    input = input.toLowerCase();
+   
    
     
     
@@ -86,29 +85,8 @@ function search_user(){
        
         if (LS[i].namee.toLowerCase().includes(input)) {
             listOfUsers += `
-            <div class="searchResWrapper">
-            <div class="divImg">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1c5g9z2f5eeGclAD7dyMVYbdvvk68utTPog&usqp=CAU"/>
-            </div>
-            <span class="searchResult">${LS[i].namee}</span>
-            </div>
-            `
-
-        }
-        
+     
     }
-    divForList = listOfUsers;
-    showRes.innerHTML = divForList;
-    // document.write(divForList);
-    console.log(divForList);
-}
-
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-  }
-  
-  function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-  }
+   
 </script>
 </html>

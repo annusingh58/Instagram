@@ -214,12 +214,7 @@
          /* font-size: 18px; */
          /* border: 1px solid red; */
     }
-    /* #switch{
-        height: 40px;
-        font-size: 22px;
-        border:1px solid red;
-    } */
-
+   
 
 
 </style>
@@ -236,12 +231,25 @@
                         <i class="fa-sharp fa-solid fa-house"></i>
                         <p>Home</p>
                     </div>
-                    <div style="cursor: pointer;"; onclick="window.location.href=`./search.html`">
+                    <div input type="text" onkeyup="myFunction()" >
 
                         <i class="fa-regular fa-magnifying-glass"></i>
                         <p>Search</p>
                     </div>
-                    <div>
+                    <div id="Searchbar" >
+                        <div>
+                            <h3>Search</h3>
+                           <form onsubmit="SearchUser(event)">
+                            <input id="search" type="search" placeholder="Search" />
+                            <input type="submit" value="search"/>
+                        </form>
+                        </div>
+                       
+                      </div>
+
+
+
+                    <div id="display_search">
                         <i class="fa-brands fa-wpexplorer"></i>
                         <p>Explore</p>
                     </div>
@@ -274,6 +282,8 @@
                     <p>More</p>
 
                 </div>
+
+
 
             </div>
             <div id="middle">
@@ -334,8 +344,29 @@
 </body>
 
 <script>
+    function SearchUser(event){
+            event.preventDefault();
+            var input =document.getElementById("search").value;
+            console.log(input,"input here")
+        var newuser=JSON.parse(localStorage.getItem("InstaUsers"));
+        var  serch_User;
+        for(i=0;i<newuser.length;i++){
+            if(newuser[i].uname==input){
+                serch_User=newuser[i]
+            }
+        }
+        console.log(serch_User,"serched user");
+
+        var divtodisplay=document.getElementById("display_search");
+
+        var structure=`<h1>${serch_User.uname}</h1>`;
+        divtodisplay.innerHTML=structure;
+        
+    }
     window.onload=function(){
         // alert("work on");
+        
+        
         var CurrentUser=JSON.parse(localStorage.getItem("InstaCurrentUser"));
         // console.log(CurrentUser,"CurrentUser here");
         var div=document.getElementById("Switch");
@@ -354,7 +385,7 @@
                             <p>${productFromLS[i].proname}</p>
                         </div>`;
         }
-        console.log(finalData,"finalData here");
+        // console.log(finalData,"finalData here");
         divtoshowproduct.innerHTML=finalData;
     }
     
