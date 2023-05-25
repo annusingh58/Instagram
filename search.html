@@ -75,10 +75,9 @@
 function search_user(){
 
     var LS = JSON.parse(localStorage.getItem("instaUsers"))
-    let input = document.getElementById('searchbar').value
+    let input = document.getElementById('form').value
     input = input.toLowerCase();
-    var divForList = document.getElementsByClassName("searchResult");
-    var showRes = document.getElementById("show")
+   
     
     
     var listOfUsers = []
