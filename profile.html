@@ -156,7 +156,7 @@
 
         #info>div:nth-child(1)>h4 {
             width: 60%;
-            font-size: 22px;
+            font-size: 24px;
         }
 
         #info>div:nth-child(1)>button {
@@ -173,6 +173,9 @@
             margin-top: 35px;
             width: 60%;
             justify-content: space-between;
+        }
+        #info>div:nth-child(2)>p{
+            font-weight: bold;
         }
 
         #rightbody {
@@ -193,6 +196,9 @@
 
         #heading>div {
             width: 25%;
+        }
+        #heading>div>p{
+            font-size: 22px;
         }
 
         #post {
@@ -282,7 +288,7 @@
                     <div id="info">
                         <div id="name">
                             <h4>Kundu Anu</h4>
-                            <button style="cursor: pointer;"onclick= "window.location.href='./editprofile.html'">Edit Profile</button>
+                            <button style="cursor: pointer;" onclick="window.location.href=' ./editprofile.html'">Edit Profile</button>
 
 
                         </div>
@@ -354,7 +360,8 @@
                <div id="info">
                    <div id="name">
                        <h4>${pdata.pname}</h4>
-                       <button>Edit Profile</button>
+                       <button style="cursor: pointer;" onclick="window.location.href='./editprofile.html'">Edit Profile</button>
+
                    </div>
                    <div>
                        <p>Posts</p>
