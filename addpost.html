@@ -5,15 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Addpost</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #screen{
+            height: 480px;
+            width:50%;
+            margin: auto;
+            border:1px solid red;
+            padding: 95px;
+            margin-top: 90px;
+        }
+        #body{
+            height: 350px;
+            width:100%;
+            border:1px solid black;
+            display: flex;
+            justify-content: space-between;
+            
+          }
+          #left{
+            height: 100%;
+            width:60%;
+            border:1 px solid gainsboro;
+          }
+          #left>img{
+            height: 100%;
+            width:100%;
+          }
+          #right{
+            height: 100%;
+            width: 35%;
+            border:1px solid green;
+          }
+          #right>input{
+            margin-top: 15px;
+            height: 40px;
+            width:100%;
+          }
+
+
+    </style>
 </head>
 <body>
-    <form onsubmit="postlist(event)">
+    <div id="screen">
+        <div id="body">
+        <div id="left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUxbgbc-iZeVi1OAnv7qnBQzbhnm7nW_kv-w&usqp=CAU"/>
+        </div>
+        <div id="right">
+        
+         <form onsubmit="postlist(event)">
         <label>Post Name</label><br/>
         <input id="pname" type="text" /></br>
         <label>Post Image url</label><br/>
         <input id="pimage" type="text" /></br>
         <input type="submit"/> </br>
     </form>
+    </div>
+    </div>
+    </div>
     <script>
         function postlist(event){
             event.preventDefault();
