@@ -6,18 +6,19 @@
 }
     #screen{
         height: 650px;
-        width:60%;
+        width:65%;
         margin: auto;
         /* border:5px solid green; */
        }
 
     .body{
         height:650px;
-        width:100%;
+        width:84%;
         /* border:1px solid orange; */
         display: flex;
         justify-content: space-between;
          align-items: center;
+         
          
          
          
@@ -40,7 +41,7 @@
         position: absolute;
         z-index: 1;
         width: 100%;
-        top: 10;
+        top: 15;
         left:15;
     }
     .img2{
@@ -52,15 +53,16 @@
     }
 
     .right{
-        height: 550px;
-        width:49% ;
+        height: 600px;
+        width:55% ;
         /* border:1px solid gainsboro; */
-        padding: 3%;
+    padding:35px;
 
     }
     #logo{
         height: 350px;
         width: 100%;
+        padding: 10px;
         border: 1px solid gainsboro;
     }
     #name{
@@ -68,7 +70,7 @@
         width: 80%;
         /* border: 1px solid red; */
         align-items: center;
-        margin-left: 55PX;
+        margin-left: 35PX;
         /* margin: 30px 55px 30px ; */
         
     }
@@ -80,7 +82,8 @@
     }
     #form{
         /* height: 300px; */
-        width: 100%;
+        width: 90%;
+        padding: 10px;
         /* border:1px solid red; */
         margin-bottom: 20px;
     }
@@ -92,32 +95,45 @@
         border:1px solid gainsboro;
     }
     #form>div:nth-child(3)>input{
-        background-color: rgb(0,149,246);
+        height: 35px;
+        background-color: rgb(76,181,249);
         color: white;
         border-radius: 10px;
     }
     #fb>p:nth-child(1){
         color: rgb(56,100,165);
         text-align: center;
+        font-weight: 800;
        
+    }
+    #fb>p:nth-child(1)>span{
+        margin-right: 5px;
     }
     #fb>p:nth-child(2){
         text-align: center;
-        margin-top: 10px;
+        margin-top: 18px;
         font-size: 12px;
+        color: rgb(56,100,165);
+
        
     }
+    .right{
+        margin-top: 20px;
+    }
     .right>p{
-        height: 50px;
+        height: 60px;
         border:1px solid gainsboro;
-        font-size: 20px;
+        font-size: 16px;
         color: rgb(87, 86, 86);
         text-align: center;
-        margin-top: 30px;
-        justify-content: center;
+        padding-top: 10px;
+
+        /* align-items: center; */
+        margin-top: 20px;
+        /* justify-content: center; */
     }
     .right>p>span{
-        background-color: rgb(0,149,246);
+        color: rgb(0,149,246);
          font-size: 18px;
          
     }
@@ -127,9 +143,10 @@
         margin-bottom: 10px;;
     }
     #app>div{
-        height: 50px;
+        height: 60px;
         width: 100%;
         display: flex;
+        padding: 10px;
         /* border:1px solid gainsboro; */
 
     }

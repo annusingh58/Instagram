@@ -61,7 +61,7 @@
         text-align: center; 
         padding: 12px;
         margin-bottom: 10px;
-        margin-top: 5px;
+        margin-top: -12px;
 
     }
     #form{
@@ -83,9 +83,13 @@
     }
     #form>p{
         margin-top: 13px;
-        font-size: 14px;
+        font-size: 13px;
         text-align: center;
         color: rgb(75, 71, 71);
+    }
+
+    #form>p>span{
+        color:rgb(0,55,107);
     }
     #form>div:nth-child(6)>input{
         background-color: rgb(76,181,249);
@@ -93,13 +97,24 @@
         border-radius: 10px;
         margin-top: 10px;
     }
-    #fb>p:nth-child(1){
+    #fb{
         height: 40px;
-        color: rgb(56,100,165);
+        width: 87%;
+        padding-left: 25px;
+    }
+    #fb>p{
+        height: 40px;
+        color: white;
+        background-color: rgb(0,149,246);
         text-align: center;
+        align-items: center;
         border:1px solid gainsboro;
-        margin-top: 10px;
+        padding: 10px;
+        border-radius: 10px;
        
+    }
+    #fb>p>span{
+        margin-right: 12px;
     }
    
     
@@ -164,7 +179,7 @@
                             <div><input id="iemail" type="email" placeholder="Enter Email Id"/></br></div>
                             <div><input id="ipassword" type="password" placeholder="password"/></br></div>
                             <div><input id="iconfimpassword" type="password" placeholder="confimpassword"/></br></div>
-                            <p>People who use our service may have uploaded your contact information to Instagram. Learn More</p>
+                            <p>People who use our service may have uploaded your contact information to Instagram. <span>Learn More</span></p>
                             <div><input type="submit" value="Signup"/></div>
         
                         </div>
